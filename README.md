@@ -1,23 +1,28 @@
-# WeatherBot :low_brightness:	
-Daily weather updates are provided for selected cities through this Telegram bot. Fetches weather information at specific hours (6:00, 8:00, 10:00, and 12:00) and sends a report to all subscribed users at 5:30 AM. Users may also instantly get a weather report using the command [/report]. 
+# WeatherBot v2.0.0 🌤️
+### AI-Powered & Multi-Language Weather Update🚀
+**WeatherBot** is a **multi-language** Telegram bot that provides **AI-powered** daily weather updates for selected cities. With **AI-enhanced insights**, users can get more detailed weather analysis alongside hourly weather data. Whether you're in **English 🇬🇧** or **Persian 🇮🇷**, WeatherBot has got you covered. Subscribers receive daily weather reports and can manually request weather updates anytime.
 
 # Features :white_check_mark:
-- Daily Weather Updates: Automatically sends weather reports to subscribed users every day at 5:30 AM.
-- Customizable Cities: Currently set to specific cities in Iran, but can be modified to other cities.
-- Specific Hours: Fetches weather information at exact times (6:00, 8:00, 10:00, and 12:00).
-- Manual Report Command: Users can manually request the weather report using the /report command.
-- Easy Subscription: Users can subscribe and unsubscribe using the /start and /stop commands.
+- **AI-Powered Weather Insights:** Get AI-generated weather commentary for each city.
+- **Multi-Language Support:** Choose between English and Persian. More languages can be added easily!
+- **Daily Weather Updates:** Weather reports sent at 5:30 AM every day (you can customize the time).
+- **Manual Report Command:** Request an instant weather report with the `/report` command.
+- **Easy Subscription:** Use `/start` to subscribe and `/stop` to unsubscribe.
+- **Customizable Cities:** Modify the cities in the code to fetch data for other locations.
+- **Optimized Performance:** Enhanced speed and reliability with AI integration and efficient data handling.
 
 # Installation :envelope_with_arrow:
 ### Prerequisites
 - [Python](python.org) 3.8+
 - Telegram Bot Token: Obtain it by creating a bot on [BotFather](t.me/BotFather).
 - OpenWeather API Key: Sign up at [OpenWeather](https://openweathermap.org/) to get a free API key.
+- Gemini API Key: Get gemini [api key](https://aistudio.google.com/apikey) for ai response.
+
 ### Setup
 1. **Clone the repository:**
    ```
-   git clone https://github.com/VimingOfficial/WeatherBot.git
-   cd WeatherBot
+   git clone https://github.com/VimingOfficial/AIWeatherBot.git
+   cd AIWeatherBot
    ```
 2. **Install the required Python packages:**
 
@@ -27,9 +32,9 @@ Daily weather updates are provided for selected cities through this Telegram bot
    **or**
    
    ```
-   pip install python-telegram-bot requests
+   pip install python-telegram-bot requests PyYAML google-generativeai asyncio
    ```
-3. **Replace 'TELEGRAM-BOT-TOKEN' and 'WEATHER-API' in weather.py with your actual Telegram bot token and OpenWeather API key.**
+3. **Replace the `YOUR_BOT_TOKEN`, `YOUR_WEATHERMAP_API` and `GEMENI_API` in weather.py with your actual Telegram bot token, OpenWeather API key and gemini API key.**
 
 # Usage :desktop_computer:	
 1. **Run the Bot:**
@@ -45,34 +50,33 @@ Daily weather updates are provided for selected cities through this Telegram bot
    > [!NOTE]
    > On Linux servers you can use this line to keep it running
 2. **Commands:**
-- /start: Subscribe to daily weather updates at 5:30 AM.
-- /stop: Unsubscribe from daily weather updates.
-- /report: Get an instant weather report with the latest data for the specified hours.
-3. **Output:**
-- The bot will send daily reports for each city at 5:30 AM.
-- Each report contains weather data at 6:00, 8:00, 10:00, and 12:00 for each city.
+- `/start`: Subscribe to daily weather updates at 5:30 AM (you can customize the time).
+- `/stop`: Unsubscribe from daily weather updates.
+- `/report`: Request an instant weather report with the latest data for the specified hours.
 
 # Customization :memo:
-- **Change Cities:** Modify the cities list in weather.py to add or change the cities.
-- **Adjust Report Times:** Modify the specific_hours list to specify different hours for weather reports.
-- **Change Report Time:** Adjust the time in run_scheduler if you need the report at a different time than 5:30 AM.
+1. **Change Cities:** Modify the cities list in weather.py to add or change cities for weather reports.
+2. **Change Report Time:** Adjust the time in run_scheduler if you need the report at a different time than 5:30 AM.
 
 # Example Output :arrow_forward:	
- Weather Report (YYYY-MM-DD)
+ 🌤 weather report (2025-03-20)
 
- At 6:00:
-- Tehran: Clear sky, 18°C
-- Mashhad: Partly cloudy, 15°C
+📍 Newyork
+<br>
+Newyork: clear sky, 26.6°C, 0kph
+<br>
+🤖 AI Response:
+The weather in Newyork is pleasant and mild. With a clear sky and a temperature of 26.6°C, it's a nice, sunny day. The absence of wind (0 kph) suggests a very still and calm atmosphere. Overall, it sounds like a comfortable day in Newyork.
 
- At 8:00:
-- Tehran: Sunny, 20°C
-- Mashhad: Overcast, 16°C
+📍 Tehran
+<br>
+Tehran: scattered clouds, 15.7°C, 1.03kph
+<br>
+🤖 AI Response:
+The weather in Tehran sounds quite pleasant. It's 15.7°C, which is a mild temperature, and there are only scattered clouds, suggesting a relatively bright day with some sun. The wind is very light at 1.03 kph, so it's unlikely to be windy. Overall, it's a nice day to be outdoors.
 
- At 10:00:
-- Tehran: Warm, 22°C
-- Mashhad: Clear, 18°C
-
- At 12:00:
-- Tehran: Sunny, 24°C
-- Mashhad: Warm, 20°C
-
+# Changelog - v2.0.0 🚀
+- **AI-Powered Insights:** WeatherBot now provides AI-enhanced weather analysis for each city.
+- **Multi-Language Support:** Users can select between English and Persian for the interface and reports.
+- **Optimized User Experience:** Enhanced message handling and smoother interactions.
+- **Performance Improvements:** Faster weather data fetching and better error handling.
