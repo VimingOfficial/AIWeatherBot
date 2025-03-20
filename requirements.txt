@@ -1,2 +1,5 @@
-python-telegram-bot
 requests
+python-telegram-bot
+PyYAML
+google-generativeai
+asyncio
