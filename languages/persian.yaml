@@ -4,4 +4,26 @@ ai_language: "Persian"
 Language file not found: "فایل زبان پیدا نشد!"
 weather report: "🌤گزارش آب و هوا"
 AI Response: "🤖 پاسخ هوش مصنوعی:"
+<<<<<<< HEAD
+subscribed_message: "شما به گزارش های روزانه پیوستید"
+Preparing the report: "آماده سازی گزارش"
+getting weather report: "دریافت گزارش آب و هوا"
+Processing with ai: "درحال پردازش با هوش مصنوعی"
+Processing complete: "پردازش کامل شد"
+please first select uour language using /start: "لطفا اول زبان خود را با استفاده از /start انتخاب کنید"
+You have unsubscribed from daily weather updates: "شما گزارش های روزانه آب و هوایی را لغو کردید"
+You are not subscribed: "شما مشترک نشده اید"
+Please specify a city. Example /addcity Tehran: "لطفا شهر خود را تعیین کنید. مثلا: \n /addcity Tehran" # Ln 67
+has been added to your city list. Use /mycities to see your list: "به لیست شهر های شما اضافه شد، میتوانید از دستور /mycities برای دیدن لیست شهرهای خود استفاده کنید" # Ln 72
+Please specify a city to remove. Example /removecity Tehran: "لطفا شهر مورد نظر را برای حذف شدن تعیین کنید. مثلا /removecity Tehran"
+City: "شهر"
+has been removed: "حذف شد"
+was not found in your list: "در لیست شما پیدا نشد"
+You haven't added any cities yet. Use /addcity to add one: "شما هنوز هیچ شهری را اضافه نکرده اید. از /addcity استفاده کنید"
+Your selected cities: "شما شهر ها را انتخاب کردید"
+Error in generating AI response: "ارور در تولید پاسخ هوش مصنوعی"
+You haven't set any cities yet. Use /addcity to add one: "شما هنوز هیچ شهری را اضافه نکرده اید. از /addcity استفاده کنید"
+ecode: "\u200F"
+=======
 subscribed_message: "You subscribe to daily report"
+>>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb
