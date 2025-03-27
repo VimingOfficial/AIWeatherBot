@@ -10,7 +10,6 @@ import asyncio
 BOT_TOKEN = 'YOUR_BOT_TOKEN'
 API_KEY = 'YOUR_WEATHERMAP_API'
 AI_API = 'GEMENI_API'
-<<<<<<< HEAD
 
 
 messages_cache = {}
@@ -102,34 +101,6 @@ async def done_adding_cities(update: Update, context: ContextTypes.DEFAULT_TYPE)
         await update.message.reply_text(f"✅ Your selected cities: {', '.join(cities)}")
 
 
-=======
-
-
-messages_cache = {}
-
-def refresh_language(user_id, lang):
-    language_code = "persian" if lang == "fa" else "english"
-    messages = load_language(language_code)
-
-    if messages is not None:
-        messages_cache[user_id] = messages
-    else:
-        messages_cache[user_id] = {"error": "❌ Error loading language file."}
-
-
-
-def load_language(lang):
-    try:
-        with open(f"languages/{lang}.yaml", "r", encoding="utf-8") as file:
-            return yaml.safe_load(file)
-    except FileNotFoundError:
-        return None
-
-cities = ["City1", "City2"]  # Replace with your chosen cities
-user_language = {}
-client = genai.Client(api_key=AI_API)
-
->>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb
 def get_weather(city):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
     response = requests.get(url)
@@ -151,33 +122,20 @@ def get_ai_response(city, weather_info, user_id):
         return "Error: Language file missing or incorrect."
 
     ai_language = messages["ai_language"]
-<<<<<<< HEAD
     prompt = f"{messages["ecode"]}Comment on the weather in {city}, which is as follows: {weather_info}. respond in {ai_language}. \n You are a highly skilled meteorologist and weather analyst. Your task is to provide detailed and insightful weather reports based on the given data. You should analyze temperature, humidity, wind speed, precipitation, and other relevant factors to deliver an accurate and professional weather forecast.\n In your response, follow this structure: \n Weather Overview: Start with a general summary of the weather, including temperature, wind conditions, and the chance of rain or snow. \n Detailed Analysis: Explain weather patterns such as high or low-pressure systems, expected changes, and how the current conditions might evolve throughout the day.\nImpact on Daily Life: Suggest how the weather may affect outdoor activities, commuting, and overall comfort.\nClothing Recommendations: Based on the weather conditions, recommend appropriate attire, such as wearing light clothing for hot weather, layering for cold conditions, or carrying an umbrella for rainy days.\nSafety Tips: If extreme weather is expected (e.g., storms, heatwaves, snowfall), offer useful precautions and advice.\n be friendly with user\nYour tone should be informative yet engaging, making it easy for users to understand and prepare for the day. Be precise, avoid unnecessary repetition, and ensure clarity in your explanations.\n you should respond in {ai_language}."
-=======
-    prompt = f"Comment on the weather in {city}, which is as follows: {weather_info}. Please respond in {ai_language}."
->>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb
 
     response = client.models.generate_content(model='gemini-2.0-flash', contents=prompt)
 
     if response and hasattr(response, 'text'):
         return response.text
     else:
-<<<<<<< HEAD
         return f"{messages["ecode"]}❌ {messages["Error in generating AI response"]}"
-=======
-        return "❌ Error in generating AI response."
->>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb
 
 
 def get_weather_report(user_id):
     messages = messages_cache.get(user_id, {})
-<<<<<<< HEAD
     weather_report_text=f"{messages["ecode"]}🌤{messages["weather report"]}"
     ai_response_text=f"{messages["ecode"]}🤖{messages["AI Response"]}"
-=======
-    weather_report_text=messages["weather report"]
-    ai_response_text=messages["AI Response"]
->>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb
     report = f" {weather_report_text} ({datetime.now().strftime('%Y-%m-%d')})\n"
     for city in cities:
         weather_info = get_weather(city)
@@ -222,7 +180,6 @@ async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def report(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id 
     messages = messages_cache.get(user_id, {})
-<<<<<<< HEAD
     cities = get_user_cities(user_id)
     if user_id not in user_language:
         await update.message.reply_text(f"{messages["ecode"]}❌ {messages["please first select uour language using /start"]}")
@@ -248,23 +205,6 @@ async def report(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await asyncio.sleep(1)
     final_text = f"✅ {messages["Processing complete"]}! (100%)\n\n" + report_text
-=======
-    if user_id not in user_language:
-        await update.message.reply_text("❌" + messages["please first select uour language using /start"])
-        return 
-
-    loading_msg = await update.message.reply_text("⏳" + messages["Fetching weather data"] +"(0%)")
-
-    await asyncio.sleep(1)
-    await loading_msg.edit_text("⏳" + messages["getting weather report"] + "(30%)")
-
-    report_text = get_weather_report(user_id)
-    await asyncio.sleep(1)
-    await loading_msg.edit_text("⏳" + messages["Processing with ai"] + "(60%)")
-
-    await asyncio.sleep(1)
-    final_text = "✅" + messages["Processing complete"] + "(100%)\n\n" + report_text
->>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb
     await loading_msg.edit_text(final_text)
 
 
@@ -275,10 +215,6 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user_language[user_id] = language
     refresh_language(user_id, language)
-<<<<<<< HEAD
-=======
-
->>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb
     messages = messages_cache.get(user_id, {})
 
     await query.edit_message_text(text=messages.get("you_selected_YOUR_language"))
@@ -293,20 +229,12 @@ def main():
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CallbackQueryHandler(button))
-<<<<<<< HEAD
     application.add_handler(CommandHandler("report", report))
     application.add_handler(CommandHandler("done", done_adding_cities))
     application.add_handler(CommandHandler("addcity", add_city,))
     application.add_handler(CommandHandler("removecity", remove_city))
     application.add_handler(CommandHandler("mycities", list_user_cities))
 
-=======
-    application.add_handler(CommandHandler("stop", stop))
-    application.add_handler(CommandHandler("report", report))
-
-    run_scheduler(application)
-
->>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb
     application.run_polling()
 
 if __name__ == "__main__":

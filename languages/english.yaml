@@ -2,7 +2,6 @@ language: "English"
 you_selected_YOUR_language: "You selected English 🇬🇧"
 ai_language: "English"
 Language file not found: "Language file not found!"
-<<<<<<< HEAD
 weather report: "Weather Report"
 AI Response: "AI Response"
 subscribed_message: "You subscribed to daily report ✅"
@@ -24,15 +23,3 @@ Your selected cities: "Your selected cities"
 Error in generating AI response: "Error in generating AI response."
 You haven't set any cities yet. Use /addcity to add one: "You haven't set any cities yet. Use /addcity to add one."
 ecode: "\u200E"
-=======
-weather report: "🌤 weather report"
-AI Response: "🤖 AI Response:"
-subscribed_message: "You subscribed to daily report ✅"
-Fetching weather data: "Fetching weather data..."
-getting weather report: "getting weather report..."
-Processing with ai: "Processing with ai..."
-Processing complete: "Processing complete!"
-please first select uour language using /start: please first select uour language using /start
-You have unsubscribed from daily weather updates: "You have unsubscribed from daily weather updates."
-You are not subscribed: "You are not subscribed."
->>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb

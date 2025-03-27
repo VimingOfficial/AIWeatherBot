@@ -1,9 +1,5 @@
 requests
-<<<<<<< HEAD
-python-telegram-bot==20.8
-=======
 python-telegram-bot
->>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb
 PyYAML
 google-generativeai
 asyncio

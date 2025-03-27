@@ -4,7 +4,6 @@ ai_language: "Persian"
 Language file not found: "فایل زبان پیدا نشد!"
 weather report: "🌤گزارش آب و هوا"
 AI Response: "🤖 پاسخ هوش مصنوعی:"
-<<<<<<< HEAD
 subscribed_message: "شما به گزارش های روزانه پیوستید"
 Preparing the report: "آماده سازی گزارش"
 getting weather report: "دریافت گزارش آب و هوا"
@@ -24,6 +23,3 @@ Your selected cities: "شما شهر ها را انتخاب کردید"
 Error in generating AI response: "ارور در تولید پاسخ هوش مصنوعی"
 You haven't set any cities yet. Use /addcity to add one: "شما هنوز هیچ شهری را اضافه نکرده اید. از /addcity استفاده کنید"
 ecode: "\u200F"
-=======
-subscribed_message: "You subscribe to daily report"
->>>>>>> 4256cffa70fe102a2987695a6d70944361d290cb
