@@ -1,3 +1,4 @@
+ You can read the published article (story) on Medium: [Building AIWeatherBot: An AI-Powered Telegram Weather Bot to Start Your Day](https://medium.com/@AmiraliPouyanrad/building-aiweatherbot-an-ai-powered-telegram-weather-bot-to-start-your-day-2cc272a5295a)
 # WeatherBot v2.0.0 🌤️
 ### AI-Powered & Multi-Language Weather Update🚀
 **WeatherBot** is a **multi-language** Telegram bot that provides **AI-powered** daily weather updates for selected cities. With **AI-enhanced insights**, users can get more detailed weather analysis alongside hourly weather data. Whether you're in **English 🇬🇧** or **Persian 🇮🇷**, WeatherBot has got you covered. Subscribers receive daily weather reports and can manually request weather updates anytime.
